@@ -8,11 +8,11 @@ Class {
 }
 
 { #category : #accessors }
-AuthorsHolder >> authorsDict [
+AuthorsHolder class >> authorsDict [
 	^ authorsDict
 ]
 
 { #category : #accessors }
-AuthorsHolder >> authorsDict: aDictionary [
+AuthorsHolder class >> authorsDict: aDictionary [
 	authorsDict := aDictionary
 ]

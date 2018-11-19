@@ -81,7 +81,7 @@ GitMigration >> commitOrder [
 	ordering := OrderedCollection new.
 	versionsByPackage := self versionsByPackage.
 	(versionsByPackage copy 
-        removeKey: 'VMMaker';
+        "removeKey: 'VMMaker';"
         yourself)
 		keysAndValuesDo: [ :pkgName :realVersions | 
 			| allVersions allRealVersions allValidVersions |

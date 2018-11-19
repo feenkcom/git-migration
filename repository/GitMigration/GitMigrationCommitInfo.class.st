@@ -20,9 +20,9 @@ Class {
 GitMigrationCommitInfo class >> info: aVersionInfo mapping: aMapping committer: aCommitter coauthors: aCoauthorsList onEmptyMessage: aBlock [
 	^ self new
 		info: aVersionInfo;
-		author: (aMapping at: aVersionInfo author);
+		author: (aMapping at: aVersionInfo author trim);
 		coauthors: (aCoauthorsList \ {aVersionInfo author} collect: [ :each | aMapping at: each ]);
-		committer: (aMapping at: aVersionInfo author);
+		committer: (aMapping at: aVersionInfo author trim);
 		onEmptyMessage: aBlock
 ]
 

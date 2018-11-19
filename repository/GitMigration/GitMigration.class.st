@@ -58,7 +58,7 @@ GitMigration >> authorsInSnapshot: aSnapshot [
 				ifTrue: [ timeStamps add: each timeStamp ].
 			(each isClassDefinition and: [ (each isKindOf: MCClassTraitDefinition) not ])
 				ifTrue: [ timeStamps add: each commentStamp ] ].
-	^ (timeStamps collect: [ :each | each copyUpTo: Character space ]) \ #('' '<historical>')
+	^ (timeStamps collect: [ :each | each copyUpTo: Character space ]) \ #('' '<historical>' '(auto' '2/7/08' '10/14/2010')
 ]
 
 { #category : #actions }
@@ -76,26 +76,29 @@ GitMigration >> cacheAllVersions [
 { #category : #actions }
 GitMigration >> commitOrder [
 	"All packages to be commited in the order from first to last, across multiple packages"
-
-	| packagePool ordering |
+	| packagePool ordering versionsByPackage |
 	packagePool := IdentitySet new.
 	ordering := OrderedCollection new.
-	self versionsByPackage
+	versionsByPackage := self versionsByPackage.
+	(versionsByPackage copy 
+        removeKey: 'VMMaker';
+        yourself)
 		keysAndValuesDo: [ :pkgName :realVersions | 
 			| allVersions allRealVersions allValidVersions |
 			allVersions := self topologicallySort: (self completeAncestryOfPackageNamed: pkgName).
 			"add only versions that have real MCZ file"
-			allRealVersions := allVersions select: [ :each | realVersions includes: each ].
-			"reject versions with empty snapshot; veryDeepCopy because the version is kept in memory, but not the snapshot"
-			allValidVersions := allRealVersions
-				reject: [ :each | 
-					| fullVersion |
-					fullVersion := self versions detect: [ :v | v info = each ].
-					fullVersion veryDeepCopy snapshot definitions isEmpty ].
-			"			self haltIf: [ (allValidVersions = allRealVersions) not ]."
-			allValidVersions
-				ifEmpty: [ self notify: 'Package ' , pkgName , ' has no MCZs with code' ].
-			packagePool add: allValidVersions ].
+			"(pkgName = 'VMMaker.oscog') ifTrue: [ self halt ]."
+            "add only versions that have real MCZ file"
+            allRealVersions := allVersions select: [ :each | 
+                (realVersions includes: each) or: [ 
+                    pkgName = 'VMMaker.oscog' and: [	
+                        (versionsByPackage at: 'VMMaker') includes: each ]
+                     ] ].
+            allValidVersions := allRealVersions.
+				"self halt."
+            allValidVersions
+                ifEmpty: [ self notify: 'Package ' , pkgName , ' has no MCZs with code' ].
+            packagePool add: allValidVersions ]. 
 	packagePool := packagePool reject: #isEmpty.
 
 	"pick the oldest available commit across all packages"
@@ -199,7 +202,7 @@ GitMigration >> initialize [
 
 { #category : #'topology sorting' }
 GitMigration >> isRoot: aKey in: pairs [
-	^ pairs noneSatisfy: [ :pair | pair value = aKey ]
+	^ pairs noneSatisfy: [ :pair | pair value == aKey ]
 ]
 
 { #category : #accessing }
@@ -229,6 +232,14 @@ GitMigration >> populateCaches [
 		displaying: 'Preparing data...'
 ]
 
+{ #category : #actions }
+GitMigration >> populateCachesExcept: aPackageName [
+	self
+		do: [ self versionsWithPackageNames.
+			self versionsExcept: aPackageName ]
+		displaying: 'Preparing data...'
+]
+
 { #category : #import }
 GitMigration >> preCheckOn: aVersion [
 	"NOTE: do not touch snapshot without performing veryDeepCopy first"
@@ -252,6 +263,12 @@ GitMigration >> projectName: aProjectName [
 { #category : #accessing }
 GitMigration >> repository [
 	^ repository
+]
+
+{ #category : #actions }
+GitMigration >> safeAncestorsFor: aMCInfo [
+    ^ aMCInfo ancestors select: [ :each | self versions anySatisfy: [ :aVersion |
+            aVersion info = each ] ]
 ]
 
 { #category : #accessing }
@@ -335,6 +352,20 @@ GitMigration >> versionsByPackage [
 	^ versionsByPackage
 ]
 
+{ #category : #actions }
+GitMigration >> versionsExcept: aPackageName [
+	versionsCache
+		ifNil: [ | versions |
+			versions := OrderedCollection new.
+			self versionsWithPackageNames
+				do: [ :quad | (quad first includesSubstring:aPackageName ) 
+					ifFalse: [ [versions add: (self versionFromFileNamed: quad last) ] 
+									on: Error do: [:e| Transcript crShow: (e printString) ] ]]
+				displayingProgress: [ :quad | 'Loading versions metadata... ' , quad last ].
+			versionsCache := versions ].
+	^ versionsCache
+]
+
 { #category : #accessing }
 GitMigration >> versionsInfo [
 	^ self versions collect: #info
@@ -352,12 +383,16 @@ GitMigration >> versionsToMigrate [
 
 { #category : #accessing }
 GitMigration >> versionsWithPackageNames [
-	^ versionsWithPackageNames
-		ifNil: [ | all selected |
-			all := repository versionsWithPackageNames.
-			versionsWithPackageNames := selectedPackageNames
-				ifEmpty: [ all ]
-				ifNotEmpty: [ all select: [ :each | selectedPackageNames includes: each first ] ] ]
+    ^ versionsWithPackageNames
+        ifNil: [ | all |
+            all := repository versionsWithPackageNames.
+            all := all reject: [ :each |  
+            {'update'. 'update.oscog' . 'updateImageFormat' } includes: each first ].
+            all := all reject: [ :each | 
+                each fourth = 'VMMaker.oscogLLP64-nice.1932.mcz'].
+            versionsWithPackageNames := selectedPackageNames
+                ifEmpty: [ all ]
+                ifNotEmpty: [ all select: [ :each | selectedPackageNames includes: each first ] ] ]
 ]
 
 { #category : #visualizations }

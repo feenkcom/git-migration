@@ -22,7 +22,7 @@ GitMigrationCommitInfo class >> info: aVersionInfo mapping: aMapping committer: 
 		info: aVersionInfo;
 		author: (aMapping at: aVersionInfo author);
 		coauthors: (aCoauthorsList \ {aVersionInfo author} collect: [ :each | aMapping at: each ]);
-		committer: aCommitter;
+		committer: (aMapping at: aVersionInfo author);
 		onEmptyMessage: aBlock
 ]
 

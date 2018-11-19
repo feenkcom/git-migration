@@ -170,7 +170,7 @@ GitMigration >> fastImportCodeToDirectory: aDirectoryName initialCommit: anIniti
 		ensureDelete;
 		writeStreamDo: [ :rawStream | 
 			writer := GitMigrationTonelWriter new on: rawStream.
-			writer exportDirectory: aDirectoryName.
+			writer exportDirectory: 'smalltalksrc'.
 			writer onEmptyMessage: onEmptyMessage.
 			self createFastImportAt: anInitialCommitish usingWriter: writer ].
 	^ writer commitMarks
@@ -316,7 +316,8 @@ GitMigration >> versions [
 		ifNil: [ | versions |
 			versions := OrderedCollection new.
 			self versionsWithPackageNames
-				do: [ :quad | versions add: (self versionFromFileNamed: quad last) ]
+			do: [ :quad | [versions add: (self versionFromFileNamed: quad last)] 
+										on: MessageNotUnderstood do:[ :e | Transcript crShow: 'ignored file', quad last printString, e printString] ]
 				displayingProgress: [ :quad | 'Loading versions metadata... ' , quad last ].
 			versionsCache := versions ].
 	^ versionsCache

@@ -85,7 +85,7 @@ GitMigrationCommitInfo >> commitMessage [
 					[ message := ((onEmptyMessage cull: info) copyWithout: Character null) withUnixLineEndings ].
 			self assert: [ message isNotEmpty ] description: [ 'Commit message must not be empty' ].
 			stream << self info name.
-			stream lf.
+			stream << ' '.
 			stream << message.
 			(self coauthors sorted: #name ascending)
 				ifNotEmpty: [ :co | 

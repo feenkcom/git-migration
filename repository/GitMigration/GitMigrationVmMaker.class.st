@@ -5,7 +5,7 @@ Class {
 }
 
 { #category : #actions }
-GitMigrationVmMaker >> exportVMMakerTo: exportFileName withAuthors: authorsFileName commitHash: initialCommit [ 
+GitMigrationVmMaker >> exportVMMakerTo: exportFileName withAuthors: authorsFileName commitHash: initialCommit byAuthor: currentUserData [
 	| migration authors |
 	
 	migration := GitMigration on: 'VMMaker'.
@@ -26,7 +26,7 @@ GitMigrationVmMaker >> exportVMMakerTo: exportFileName withAuthors: authorsFileN
 					yourself ].
 				list ]) .	
 		
-	migration authors: authors associations.
+	migration authors: authors associations, {currentUserData}.
 
 	"migration ignoredFileNames: #('VMMaker.oscog-eem.1082').
 	migration ignoredFileNames: #()."

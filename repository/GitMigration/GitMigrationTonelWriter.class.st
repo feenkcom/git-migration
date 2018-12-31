@@ -16,9 +16,7 @@ GitMigrationTonelWriter >> ensureContainsOrganization: aVersion [
 	aVersion snapshot definitions
 		detect: #isOrganizationDefinition
 		ifFound: [ :each | each ]
-		ifNone: [ 
-			aVersion snapshot initializeWithDefinitions: (aVersion snapshot definitions asOrderedCollection). 
-			aVersion snapshot definitions add: (MCOrganizationDefinition categories: {aVersion package name}) ]
+		ifNone: [ aVersion snapshot definitions add: (MCOrganizationDefinition categories: {aVersion package name}) ]
 ]
 
 { #category : #writing }

@@ -7,7 +7,7 @@ Class {
 { #category : #'writing - memory' }
 GitMigrationTonelWriter >> copyPackageIn: aVersion toStore: memoryStore [
 	self ensureContainsOrganization: aVersion.
-	TonelWriter fileOut: aVersion on: memoryStore.
+	GitMigrationTonelWriterAdapter fileOut: aVersion on: memoryStore.
 	self writePropertiesFileTo: memoryStore
 ]
 

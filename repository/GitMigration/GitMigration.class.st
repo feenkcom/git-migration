@@ -232,14 +232,6 @@ GitMigration >> populateCaches [
 		displaying: 'Preparing data...'
 ]
 
-{ #category : #actions }
-GitMigration >> populateCachesExcept: aPackageName [
-	self
-		do: [ self versionsWithPackageNames.
-			self versionsExcept: aPackageName ]
-		displaying: 'Preparing data...'
-]
-
 { #category : #import }
 GitMigration >> preCheckOn: aVersion [
 	"NOTE: do not touch snapshot without performing veryDeepCopy first"
@@ -263,12 +255,6 @@ GitMigration >> projectName: aProjectName [
 { #category : #accessing }
 GitMigration >> repository [
 	^ repository
-]
-
-{ #category : #actions }
-GitMigration >> safeAncestorsFor: aMCInfo [
-    ^ aMCInfo ancestors select: [ :each | self versions anySatisfy: [ :aVersion |
-            aVersion info = each ] ]
 ]
 
 { #category : #accessing }
@@ -350,20 +336,6 @@ GitMigration >> versionsByPackage [
 				at: (version name copyUpToLast: $-)
 				ifAbsentPut: [ OrderedCollection new ]) add: version ].
 	^ versionsByPackage
-]
-
-{ #category : #actions }
-GitMigration >> versionsExcept: aPackageName [
-	versionsCache
-		ifNil: [ | versions |
-			versions := OrderedCollection new.
-			self versionsWithPackageNames
-				do: [ :quad | (quad first includesSubstring:aPackageName ) 
-					ifFalse: [ [versions add: (self versionFromFileNamed: quad last) ] 
-									on: Error do: [:e| Transcript crShow: (e printString) ] ]]
-				displayingProgress: [ :quad | 'Loading versions metadata... ' , quad last ].
-			versionsCache := versions ].
-	^ versionsCache
 ]
 
 { #category : #accessing }

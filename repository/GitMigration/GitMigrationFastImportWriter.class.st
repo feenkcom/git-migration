@@ -38,7 +38,8 @@ GitMigrationFastImportWriter >> authorsInSnapshot: aSnapshot [
 				ifTrue: [ timeStamps add: each timeStamp ].
 			(each isClassDefinition and: [ (each isKindOf: MCClassTraitDefinition) not ])
 				ifTrue: [ timeStamps add: each commentStamp ] ].
-	^ (timeStamps collect: [ :each | each copyUpTo: Character space ]) \ #('' '<historical>')
+	^ (timeStamps collect: [ :each | each copyUpTo: Character space ]) \ 
+		#('' '<historical>' '(auto' '2/7/08' '10/14/2010')
 ]
 
 { #category : #accessing }

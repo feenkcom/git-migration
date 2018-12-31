@@ -1,0 +1,124 @@
+ nice,Nicolas Cellier,nicolas.cellier.aka.nice@gmail.com
+ab,Alexandre Bergel,alexandre.bergel@me.com 
+acg,Andrew C. Greenberg,werdna@mucow.com
+ajh,Anthony J. Hannan,ony@cc.gatech.edu
+akg,Alistair Grant,akgrant0710@gmail.com
+AlistairGrant,Alistair Grant,akgrant0710@gmail.com
+anon,Anonymous,anonymous@example.com
+ar,Andreas Raab,andreas.raab@gmx.de
+asm,Alejandro Magistrello,alejandro_magistrello@hotmail.com
+ATG,ATG,ATG@example.com
+autoboot,Automatic,automatic@example.com
+bak,Bastian Kruck,Bastian.Kruck@student.hpi.de
+BenjaminVanRyseghem,Benjamin Van Ryseghem,benjamin.vanryseghem@gmail.com
+bf,Bert Freudenberg,bert@freudenbergs.de
+bgf,Bert Freudenberg,bert@freudenbergs.de
+brp,Brent Pinkney,pinkfoot@bigfoot.com
+CamilloBruni,Camillo Bruni,camillobruni@gmail.com
+cb,Clement Bera,bera.clement@gmail.com
+cg,Cathleen Galas,cathleen.galas@cathleengalas.com
+ClemenTBera,Clement Bera,bera.clement@gmail.com
+ClementBera,Clement Bera,bera.clement@gmail.com
+cmm,Chris Muller,ma.chris.m@gmail.com
+crl,Craig Latta,craig@netjam.org
+CyrilFerlicot,Cyril Ferlicot,cyril.ferlicot@gmail.com
+DamienCassou,Damien Cassou,damien.cassou@gmail.com
+DavidGraham,David Graham,david@unthinkable.org
+DGD,Diego Gomez Deck,DiegoGomezDeck@ConsultAr.com
+dgd,Diego Gomez Deck,DiegoGomezDeck@ConsultAr.com
+di,Dan Ingalls,Dan@SqueakLand.org
+djm,Douglas McPherson,djm1329@mac.com
+dtl,David T. Lewis,lewis@mail.msen.com
+eem,Eliot Miranda,eliot.miranda@gmail.com
+efc,Eddie Cottongim,eddie@cottongim.org
+eliot,Eliot Miranda,eliot.miranda@gmail.com
+EliotMiranda,Eliot Miranda,eliot.miranda@gmail.com
+EstebanLM,Esteban Lorenzano,estebanlm@gmail.com
+EstebanLorenzano,Esteban Lorenzano,estebanlm@gmail.com
+fbs,Frank Shearar,frank@angband.za.org
+GB,Bourachot,switch_flameboy@hotmail.Com
+go,Georg Gollmann,gollmann@zid.tuwien.ac.at
+golubovsky,Dmitry Golubovsky,golubovsky@gmail.com
+gs,Greg,a.x5000@virgin.net
+GuillermoPolito,Guillermo Polito,guillermopolito@gmail.com
+hg,Henrik Gedenryd,hg@example.com
+hmm,Hans-Martin Mosner,hmm@heeg.de
+HolgerHansPeterFreyther,Holger Freyther,holger@freyther.de
+hrs,Howard Stearns,hstearns@wisc.edu
+Igor.Stasenko,Igor Stasenko,siguctua@gmail.com
+IgorStasenko,Igor Stasenko,siguctua@gmail.com
+ikp,Ian Piumarta,piumarta@gmail.com
+JB,Jan Barger,barger@barnett.sk
+jcg,Joshua Gargus,schwa@fastmail.us
+jdm,John David Miller,johndavidmiller@mac.com
+jeanbaptistearnaud,Jean Baptiste Arnaud,jbaptiste.arnaud@gmail.com
+jeanbaptistearnud,Jean Baptiste Arnaud,jbaptiste.arnaud@gmail.com
+jm,John Maloney,John.Maloney@disney.com
+JMM,John McIntosh,johnmci@smalltalkconsulting.com
+jmm,John McIntosh,johnmci@smalltalkconsulting.com
+jmv,Juan Vuletich,juan@jvuletich.org
+John,John McIntosh,johnmci@smalltalkconsulting.com
+John M McIntosh,John McIntosh,johnmci@smalltalkconsulting.com
+jr,JamesRoberts,JamesRoberts@example.com
+JSM,Jaime Silvela,jsilvela@mac.com
+kks,K K Subbu,kksubbu.ml@gmail.com
+kph,Keith Hodges,keith_hodges@yahoo.co.uk
+KR,korakurider,korakurider@gmail.com
+LaurentLaffont,Laurent Laffont,laurent.laffont@gmail.com
+len,Luciano Notarfrancesco,luchiano@gmail.com
+lpc,Laura Perez Cerrato,lauraperezcerrato@gmail.com
+ls,Lex Spoon,lex@lexspoon.org
+LucFabresse,Luc Fabresse,luc.fabresse@gmail.com
+lw,Lars Wassermann,lars.wassermann@gmail.com
+MarianoMartinezPeck,Mariano Martinez Peck,marianopeck@gmail.com
+md,Marcus Denker,marcus.denker@inria.fr
+mga,Markus Gaelli,markus.gaelli@gmail.com
+mha,Michael Haupt,mhaupt@gmail.com
+mir,Michael Rueger,m.rueger@acm.org
+mn,Mats Nygren,nygren@sics.se
+monty,monty,monty2@programmer.net
+MPW,Marcel Weiher,marcel@metaobject.com
+mt,Marcel Taeumel,marcel.taeumel@hpi.uni-potsdam.de
+mtf,Matthew Fulmer,tapplek@gmail.com
+nice,Nicolas Cellier,nicolas.cellier.aka.nice@gmail.com
+NicolasPasserini,Nicolas Passerini,npasserini@gmail.com
+nk,Ned Konz,ned@squeakland.org
+NS,Nathanael Schaerli,n.schaerli@gmx.net
+qwaq,Automatic,automatic@example.com
+RAA,Bob Arning,arning315@comcast.net
+ReinoutStevens,Reinout Stevens,resteven@infogroep.be
+rhi,Robert Hirschfeld,robert.hirschfeld@gmx.net
+rmacnak,Ryan Macnak,rmacnak@gmail.com
+RMF,RMF,RMF@example.com
+RonieSalgado,Ronie Salgado Faila,roniesalg@gmail.com
+rsf,Ronie Salgado Faila,roniesalg@gmail.com
+rww,Robert Withers,robert.withers@protonmail.com
+sd,Simon Dobson,simon.dobson@computer.org
+sig,Igor Stasenko,siguctua@gmail.com
+sk,skim,skim.la@gmail.com
+sm,Simon Michael,simon@joyful.com
+sma,Stefan Matthias Aust,sma@3plus4.de
+Sophie,Sophie Kaleba,sophie.kaleba@gmail.com
+SophieKaleba,Sophie Kaleba,sophie.kaleba@gmail.com
+SqR,Automatic,automatic@example.com
+sr,Stephan Rudlof,StephanRudlof@example.com
+StasenkoIgor,Igor Stasenko,siguctua@gmail.com
+StefanMarr,Stefan Marr,Stefan.Marr@vub.ac.be 
+StephaneDucasse,Stephane Ducasse,stephane.ducasse@gmail.com
+svp,Stephen Pair,stephen@pairhome.net
+sw,Scott Wallace,scott.wallace@squeakland.org
+tbn,Torsten Bergmann,Torsten.Bergmann@astares.de
+tfei,The Fourth Estate Inc,tfei@example.com
+tfel,Tim Felgentreff,timfelgentreff@gmail.com
+tfrel,Tim Felgentreff,timfelgentreff@gmail.com
+th,Torge Husfeldt,minnow.20.torgehusfeldt@spamgourmet.com
+tk,Ted Kaehler,ted@Squeakland.org
+topa,Tobias Pape,Das.Linux@gmx.de
+TPR,Tim Rowledge,tim@rowledge.org
+tpr,Tim Rowledge,tim@rowledge.org
+Tsutomu,Tsutomu Hiroshima,Tsutomu@example.com
+tty,Timothy M,gettimothy@zoho.com
+ul,Levente Uzonyi,leves@elte.hu
+VB,Vassili Bykov,vassili@parcplace.com
+yo,Yoshiki Ohshima,yoshiki@vpri.org
+Richo,Richi Moran,richi.moran@gmail.com

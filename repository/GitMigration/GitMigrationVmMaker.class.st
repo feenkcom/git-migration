@@ -12,7 +12,7 @@ GitMigrationVmMaker >> exportVMMakerTo: exportFileName withAuthors: authorsFileN
 	migration onEmptyMessage: [ :info | 'empty commit message' ].
 	migration selectedPackageNames: #('VMMaker' 'Balloon-Engine-Pools' 'BytecodeSets.spur' 'VMMaker.oscog' 'Cog' 'CogTools' 'ImageFormat' 'VMMakerCompatibilityForPharo6' 'Android-Base' 'CMakeVMMaker' 'CMakeVMMakerSqueak' 'CogAttic' 'CogBenchmarks' 'CogCompatibility' 'CogTools-Listener' 'ImageFormat' 'MemoryAccess' 'Qwaq-VMProfiling' 'SlangBrowser' 'VMM-touch-temp' 'VMMakerCompatibilityForPharo6' 'VMMakerExtras' 'VMMakerJS').
 
-	migration downloadAllVersions.
+	"migration downloadAllVersions."
 	migration populateCaches.
 
 	"allAuthors := migration allAuthors."

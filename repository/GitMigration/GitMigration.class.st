@@ -319,8 +319,7 @@ GitMigration >> versions [
 		ifNil: [ | versions |
 			versions := OrderedCollection new.
 			self versionsWithPackageNames
-			do: [ :quad | [versions add: (self versionFromFileNamed: quad last)] 
-										on: MessageNotUnderstood do:[ :e | Transcript crShow: 'ignored file', quad last printString, e printString] ]
+			do: [ :quad | versions add: (self versionFromFileNamed: quad last) ]
 				displayingProgress: [ :quad | 'Loading versions metadata... ' , quad last ].
 			versionsCache := versions ].
 	^ versionsCache

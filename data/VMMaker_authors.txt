@@ -122,3 +122,4 @@ ul,Levente Uzonyi,leves@elte.hu
 VB,Vassili Bykov,vassili@parcplace.com
 yo,Yoshiki Ohshima,yoshiki@vpri.org
 Richo,Richi Moran,richi.moran@gmail.com
+KenD,Ken Dickey,Ken.Dickey@whidbey.com

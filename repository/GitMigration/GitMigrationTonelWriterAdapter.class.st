@@ -4,13 +4,6 @@ Class {
 	#category : #'GitMigration-FastImport'
 }
 
-{ #category : #private }
-GitMigrationTonelWriterAdapter >> obtainPackageDir: aDefinition [
-	"For VMMaker the package dir should be given by the common prefix "
-	
-	^ aDefinition commonPrefix
-]
-
 { #category : #writing }
 GitMigrationTonelWriterAdapter >> writePackage: aDefinition  forPackageName: aPackageName [
 	"I'm assuming first category is actually the package"
@@ -49,5 +42,5 @@ GitMigrationTonelWriterAdapter >> writeSnapshot: aSnapshot  forPackageName: aPac
 
 { #category : #writing }
 GitMigrationTonelWriterAdapter >> writeVersion: aVersion [
-	self writeSnapshot: aVersion snapshot "forPackageName: aVersion package name"
+	self writeSnapshot: aVersion snapshot forPackageName: aVersion package name
 ]
